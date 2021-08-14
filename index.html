@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdown = document.querySelector('.dropdown');
+            dropdown.addEventListener('click', function(event) {
+                event.stopPropagation();
+                dropdown.classList.toggle('is-active');
+            });
+        });        
+    </script>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Hello World
+      </h1>
+      <p class="subtitle">
+        My first website with <strong>Bulma</strong>!
+      </p>
+    </div>
+    <div class="columns">
+        <div class="column is-one-quarter">
+            <div class="dropdown">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Purchase Plan</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        1 GB $
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item">
+                        2 GB $$
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        3 GB $$$
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        5 GB $$$$
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        10 GB $$$$$
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        20 GB $$$$$$
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-half">
+            Second column
+        </div>
+        <div class="column is-one-quarter">
+            Third column
+        </div>
+    </div>
+  </section>
+  </body>
+</html>
