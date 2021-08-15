@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NYC Sneaks</title>
+    <title>Site Supply</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
@@ -24,61 +24,51 @@
   </head>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      var dropdown = document.querySelector(".dropdown");
+      var dropdown = document.querySelector(".dropdown"); 
       dropdown.addEventListener("click", function (event) {
         event.stopPropagation();
         dropdown.classList.toggle("is-active");
       });
     });
+    function region(){
+      var list = document.getElementById("list");
+      document.getElementById("regionType").value = list.options[list.selectedIndex].text;
+    }
   </script>
+  
   <body>
+      <img src="images/SiteSupply-05.png" class="center">
     <div class="cards-container">
       <div class="card stack">
         <img class="icon" src="images/running-shoe.svg" alt="" />
         <h1 class="title">LOGIN</h1>
         <p class="article">Please Login below</p>
         <form action="">
-          <input class="input" type="text" id="username" name="username" placeholder="Username"/><br /><br />
-          <input class="input" type="text" id="password" name="password" placeholder="Password"/><br /><br />
-          <button type="submit" class="button button-sedans">Login</button>
+          <input class="input is-info" type="text" id="username" name="username" placeholder="Username"/><br /><br />
+          <input class="input is-info" type="text" id="password" name="password" placeholder="Password"/><br /><br />
+          <button type="submit" class="button is-info">Login</button>
         </form>
       </div>
       <div class="card stack">
         <img class="icon" src="images/trainer.svg" alt="" />
         <h1 class="title">Purchase Plan</h1>
-        <div class="dropdown">
-          <div class="dropdown-trigger">
-            <button
-              class="button"
-              aria-haspopup="true"
-              aria-controls="dropdown-menu"
-            >
-              <span>Purchase Plan</span>
-              <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-          <div class="dropdown-menu" id="dropdown-menu" role="menu">
-            <div class="dropdown-content">
-              <a href="#" class="dropdown-item"> 1 GB $ </a>
-              <hr class="dropdown-divider" />
-              <a class="dropdown-item"> 2 GB $$ </a>
-              <hr class="dropdown-divider" />
-              <a href="#" class="dropdown-item"> 3 GB $$$ </a>
-              <hr class="dropdown-divider" />
-              <a href="#" class="dropdown-item"> 5 GB $$$$ </a>
-              <hr class="dropdown-divider" />
-              <a href="#" class="dropdown-item"> 10 GB $$$$$ </a>
-              <hr class="dropdown-divider" />
-              <a href="#" class="dropdown-item"> 20 GB $$$$$$ </a>
-            </div>
-          </div>
-        </div>
+        <div class="buttons">
+        <form>
+          <select id="list" onchange="region()"> 
+            <option>Purchase Plan</option>
+            <option>1 GB</option>
+            <option>2 GB</option>
+            <option>3 GB</option>
+            <option>5 GB</option>
+            <option>10 GB</option>
+            <option>20 GB</option>
+          </select>
+          </form>
         <button class="button button-luxury">Purchase</button>
+        </div>
         <div>
           <label class="label article">Data Usage</label>
-          <progress class="progress is-primary" value="30" max="100">15%</progress>
+          <progress class="progress" value="30" max="100">15%</progress>
           <div class="buttons">
             <input class="input" type="number" style="width: 25%;" min="0">
             <p class="article side-padding">out of</p>
@@ -96,30 +86,14 @@
               <input class="input" type="number" style="width: 30%;" step="1" min="0">
             </div>
           </div>
-          <div class="dropdown">
-            <div class="dropdown-trigger" >
-              <button
-                class="button"
-                aria-haspopup="true"
-                aria-controls="dropdown-menu"
-                onClick="myFunction(this)"
-              >
-                <span>Region</span>
-                <span class="icon is-small">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-            </div>
-            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-              <div class="dropdown-content">
-                <a href="#" class="dropdown-item"> USA </a>
-                <hr class="dropdown-divider" />
-                <a href="#" class="dropdown-item"> CA </a>
-                <hr class="dropdown-divider" />
-                <a href="#" class="dropdown-item"> EU </a>
-              </div>
-            </div>
-          </div>
+          <form>
+          <select id="list" onchange="region()"> 
+            <option>Region</option>
+            <option>USA</option>
+            <option>CA</option>
+            <option>EU</option>
+          </select>
+          </form>
         </div>
         <div class="control">
           <textarea class="textarea has-fixed-size" readonly rows="15">Proxies Created</textarea>
