@@ -78,6 +78,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  
 }
 
 button {
@@ -86,6 +87,10 @@ button {
   padding: 0.8em 1.8em;
   border-radius: 3rem;
   border: none;
+}
+
+.side-padding{
+  padding: 0 5px;
 }
 
 .button:hover {
